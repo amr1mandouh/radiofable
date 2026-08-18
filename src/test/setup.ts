@@ -7,4 +7,5 @@ const localStorageMock: Storage = { getItem: (key) => store.get(key) ?? null, se
 Object.defineProperty(window, 'localStorage', { value: localStorageMock })
 beforeEach(() => { store.clear(); vi.restoreAllMocks() })
 afterEach(() => { cleanup(); store.clear() })
+// Keep each broadcast test independent, even when a previous episode was saved.
 // Keep each broadcast room test independent, even when a previous test saved a load.
